@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Doodle</string>
+    <string name="small_brush">small brush</string>
+    <string name="medium_brush">medium brush</string>
+    <string name="large_brush">large brush</string>
+    <string name="select_brush_size">Select brush size</string>
+    <string name="black">black</string>
+    <string name="orange">orange</string>
+    <string name="yellow">yellow</string>
+    <string name="blue">blue</string>
+    <string name="green">green</string>
+    <string name="red">red</string>
+    <string name="gray">gray</string>
+    <string name="indigo">indigo</string>
+    <string name="purple">purple</string>
+    <string name="pink">pink</string>
+    <string name="teal">teal</string>
+    <string name="cyan">cyan</string>
+    <string name="white">white</string>
+    <string name="background_image">background image</string>
+    <string name="select_image_from_gallery">select image from gallery</string>
+</resources>
