@@ -6,8 +6,10 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.20108695652173914" />
         <entry key="app/src/main/res/drawable/bg_drawing_view_layout.xml" value="0.1305" />
         <entry key="app/src/main/res/drawable/color_blue.xml" value="0.1365" />
+        <entry key="app/src/main/res/drawable/extra_small.xml" value="0.183" />
         <entry key="app/src/main/res/drawable/large.xml" value="0.1365" />
         <entry key="app/src/main/res/drawable/medium.xml" value="0.1365" />
+        <entry key="app/src/main/res/drawable/pallet_normal.xml" value="0.183" />
         <entry key="app/src/main/res/drawable/pallete_normal.xml" value="0.1605" />
         <entry key="app/src/main/res/drawable/pallete_pressed.xml" value="0.1365" />
         <entry key="app/src/main/res/drawable/red.xml" value="0.1355" />

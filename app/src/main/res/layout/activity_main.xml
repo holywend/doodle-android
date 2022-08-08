@@ -58,31 +58,31 @@
             android:tag="@color/pink_500" />
 
         <ImageButton
-            android:id="@+id/ib_cyan"
+            android:id="@+id/ib_orange"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@color/cyan_600"
+            android:background="@color/orange_400"
             android:contentDescription="@string/cyan"
             android:src="@drawable/pallet_normal"
-            android:tag="@color/cyan_600" />
+            android:tag="@color/orange_200" />
 
         <ImageButton
-            android:id="@+id/ib_teal"
+            android:id="@+id/ib_skin"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@color/teal_400"
-            android:contentDescription="@string/teal"
+            android:background="@color/skin_400"
+            android:contentDescription="@string/skin"
             android:src="@drawable/pallet_normal"
-            android:tag="@color/teal_400" />
+            android:tag="@color/skin_400" />
 
         <ImageButton
             android:id="@+id/ib_purple"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@color/purple_600"
+            android:background="@color/purple_500"
             android:contentDescription="@string/purple"
             android:src="@drawable/pallet_normal"
-            android:tag="@color/purple_600" />
+            android:tag="@color/purple_500" />
 
         <ImageButton
             android:id="@+id/ib_indigo"
@@ -106,28 +106,28 @@
             android:id="@+id/ib_green"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@color/green_600"
+            android:background="@color/green_500"
             android:contentDescription="@string/green"
             android:src="@drawable/pallet_normal"
-            android:tag="@color/green_600" />
+            android:tag="@color/green_500" />
 
         <ImageButton
             android:id="@+id/ib_blue"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@color/blue_600"
+            android:background="@color/blue_500"
             android:contentDescription="@string/blue"
             android:src="@drawable/pallet_normal"
-            android:tag="@color/blue_600" />
+            android:tag="@color/blue_500" />
 
         <ImageButton
             android:id="@+id/ib_yellow"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@color/yellow_600"
+            android:background="@color/yellow_400"
             android:contentDescription="@string/yellow"
             android:src="@drawable/pallet_normal"
-            android:tag="@color/yellow_600" />
+            android:tag="@color/yellow_400" />
 
         <ImageButton
             android:id="@+id/ib_gray"

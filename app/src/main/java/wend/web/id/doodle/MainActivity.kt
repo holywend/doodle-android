@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity() {
 
     private var selectedIbColor: ImageButton? = null
     private var ibPink: ImageButton? = null
-    private var ibCyan: ImageButton? = null
-    private var ibTeal: ImageButton? = null
+    private var ibOrange: ImageButton? = null
+    private var ibSkin: ImageButton? = null
     private var ibPurple: ImageButton? = null
     private var ibIndigo: ImageButton? = null
     private var ibRed: ImageButton? = null
@@ -151,8 +151,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         ibPink = findViewById(R.id.ib_pink)
-        ibCyan = findViewById(R.id.ib_cyan)
-        ibTeal = findViewById(R.id.ib_teal)
+        ibOrange = findViewById(R.id.ib_orange)
+        ibSkin = findViewById(R.id.ib_skin)
         ibPurple = findViewById(R.id.ib_purple)
         ibIndigo = findViewById(R.id.ib_indigo)
         ibRed = findViewById(R.id.ib_red)
@@ -172,11 +172,11 @@ class MainActivity : AppCompatActivity() {
         ibPink?.setOnClickListener {
             clickIbColor(ibPink!!)
         }
-        ibCyan?.setOnClickListener {
-            clickIbColor(ibCyan!!)
+        ibOrange?.setOnClickListener {
+            clickIbColor(ibOrange!!)
         }
-        ibTeal?.setOnClickListener {
-            clickIbColor(ibTeal!!)
+        ibSkin?.setOnClickListener {
+            clickIbColor(ibSkin!!)
         }
         ibPurple?.setOnClickListener {
             clickIbColor(ibPurple!!)
@@ -211,9 +211,15 @@ class MainActivity : AppCompatActivity() {
         val brushDialog = Dialog(this)
         brushDialog.setContentView(R.layout.dialog_brush_size)
         brushDialog.setTitle("Brush size")
+        val btnExtraSmall: ImageButton = brushDialog.findViewById(R.id.ib_extra_small_brush)
         val btnSmall: ImageButton = brushDialog.findViewById(R.id.ib_small_brush)
         val btnMedium: ImageButton = brushDialog.findViewById(R.id.ib_medium_brush)
         val btnLarge: ImageButton = brushDialog.findViewById(R.id.ib_large_brush)
+
+        btnExtraSmall.setOnClickListener {
+            drawingView?.setSizeForBrush(5.toFloat())
+            brushDialog.dismiss()
+        }
 
         btnSmall.setOnClickListener {
             drawingView?.setSizeForBrush(10.toFloat())

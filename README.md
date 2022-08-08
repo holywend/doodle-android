@@ -8,3 +8,6 @@ an android application for doodling, can use image as background of a doodle and
 - share
 - custom dialog
 - custom progress bar
+
+# color
+- import color.xml from tailwind css color pallet
