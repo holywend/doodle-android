@@ -161,7 +161,7 @@
         android:id="@+id/ll_tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_created"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:orientation="horizontal"
@@ -175,6 +175,14 @@
             android:contentDescription="@string/select_image_from_gallery"
             android:scaleType="fitXY"
             android:src="@drawable/ic_gallery" />
+        <ImageButton
+            android:id="@+id/ib_clear"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/clear_image"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_clear_gallery" />
         <ImageButton
             android:id="@+id/ib_undo"
             android:layout_width="50dp"
@@ -209,6 +217,21 @@
             android:scaleType="fitXY"
             android:src="@drawable/ic_save" />
     </LinearLayout>
+    <TextView
+        android:id="@+id/tv_created"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|end"
+        android:paddingHorizontal="12dp"
+        android:text="@string/created_wendy_2022"
+        android:textColor="@color/gray_500"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

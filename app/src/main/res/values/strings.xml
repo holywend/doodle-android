@@ -21,4 +21,6 @@
     <string name="select_image_from_gallery">select image from gallery</string>
     <string name="please_wait">Please wait...</string>
     <string name="skin">skin</string>
+    <string name="clear_image">clear image</string>
+    <string name="created_wendy_2022">created wendy@2022</string>
 </resources>

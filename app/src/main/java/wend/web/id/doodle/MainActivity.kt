@@ -8,6 +8,7 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
+import android.media.Image
 import android.media.MediaScannerConnection
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     private var ibUndo: ImageButton? = null
     private var ibRedo: ImageButton? = null
     private var ibSave: ImageButton? = null
+    private var ibClear: ImageButton? = null
 
     private var selectedIbColor: ImageButton? = null
     private var ibPink: ImageButton? = null
@@ -60,6 +62,11 @@ class MainActivity : AppCompatActivity() {
                 ivBackground.setImageURI(result.data?.data)
             }
         }
+
+    private fun clearIvBackground() {
+        val ivBackground = findViewById<ImageView>(R.id.iv_background)
+        ivBackground.setImageURI(null)
+    }
 
     // read application permission
     private val getPermissions: ActivityResultLauncher<Array<String>> =
@@ -133,6 +140,11 @@ class MainActivity : AppCompatActivity() {
             } else {
                 requestStoragePermission()
             }
+        }
+
+        ibClear = findViewById(R.id.ib_clear)
+        ibClear?.setOnClickListener {
+            clearIvBackground()
         }
 
         ibSave = findViewById(R.id.ib_save)
