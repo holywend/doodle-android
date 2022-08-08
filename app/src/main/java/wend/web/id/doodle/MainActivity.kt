@@ -8,8 +8,6 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
-import android.media.Image
-import android.media.MediaScannerConnection
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -38,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     private var ibRedo: ImageButton? = null
     private var ibSave: ImageButton? = null
     private var ibClear: ImageButton? = null
+    private var ibReset: ImageButton? = null
 
     private var selectedIbColor: ImageButton? = null
     private var ibPink: ImageButton? = null
@@ -145,6 +144,11 @@ class MainActivity : AppCompatActivity() {
         ibClear = findViewById(R.id.ib_clear)
         ibClear?.setOnClickListener {
             clearIvBackground()
+        }
+
+        ibReset = findViewById(R.id.ib_reset)
+        ibReset?.setOnClickListener {
+            resetDoodle()
         }
 
         ibSave = findViewById(R.id.ib_save)
@@ -288,6 +292,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun resetDoodle() {
+        drawingView?.resetDoodle()
+    }
+
     private fun clickIbColor(ib: ImageButton) {
         if (ib != selectedIbColor) { // only change if it is not already selected
             drawingView?.setColor(ib.tag.toString())
@@ -345,7 +353,7 @@ class MainActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
 
-                            share(FileProvider.getUriForFile(baseContext, "wend.web.id.doodle.fileprovider",file)) // share the saved image
+                            share(FileProvider.getUriForFile(baseContext, "wend.web.id.doodle.file_provider",file)) // share the saved image
                         } else {
                             Toast.makeText(
                                 this@MainActivity,

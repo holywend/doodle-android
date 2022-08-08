@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <provider
-            android:authorities="wend.web.id.doodle.fileprovider"
+            android:authorities="wend.web.id.doodle.file_provider"
             android:name="androidx.core.content.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true"

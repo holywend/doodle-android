@@ -45,8 +45,8 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
         // draw on the canvas from stored paths in mPaths
         for (path in mPaths) {
             mDrawPaint!!.strokeWidth = path.brushThickness
-            mDrawPaint!!.color = path!!.color
-            canvas.drawPath(path!!, mDrawPaint!!)
+            mDrawPaint!!.color = path.color
+            canvas.drawPath(path, mDrawPaint!!)
         }
 
         // draw on the canvas from user's action
@@ -123,7 +123,13 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
         return false
     }
 
-    internal inner class CustomPath(var color: Int, var brushThickness: Float) : Path() {
-
+    fun resetDoodle() {
+        if (mPaths.size > 0 || mUndoPaths.size > 0) {
+            mPaths.clear()
+            mUndoPaths.clear()
+            invalidate()
+        }
     }
+
+    internal inner class CustomPath(var color: Int, var brushThickness: Float) : Path()
 }
