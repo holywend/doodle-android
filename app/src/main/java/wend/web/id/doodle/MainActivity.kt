@@ -9,6 +9,7 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
 import android.media.MediaScannerConnection
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
@@ -18,6 +19,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -331,7 +333,7 @@ class MainActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
 
-                            share(result) // share the saved image
+                            share(FileProvider.getUriForFile(baseContext, "wend.web.id.doodle.fileprovider",file)) // share the saved image
                         } else {
                             Toast.makeText(
                                 this@MainActivity,
@@ -370,15 +372,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     // function to share image result
-    private fun share(result: String) {
-        MediaScannerConnection.scanFile(this, arrayOf(result), null) {
-            _, uri ->
+    private fun share(uri: Uri) {
+//        MediaScannerConnection.scanFile(this, arrayOf(result), null) {
+//            _, uri ->
             val shareIntent = Intent()
             shareIntent.action = Intent.ACTION_SEND
             shareIntent.putExtra(Intent.EXTRA_STREAM, uri)
             shareIntent.type = "image/png"
             startActivity(Intent.createChooser(shareIntent, "Share"))
         }
-    }
+//    }
 
 }
