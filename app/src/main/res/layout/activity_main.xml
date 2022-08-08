@@ -175,7 +175,23 @@
             android:contentDescription="@string/select_image_from_gallery"
             android:scaleType="fitXY"
             android:src="@drawable/ic_gallery" />
-
+        <ImageButton
+            android:id="@+id/ib_undo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/select_brush_size"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_undo" />
+        <ImageButton
+            android:id="@+id/ib_redo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/select_brush_size"
+            android:scaleType="fitXY"
+            android:scaleX="-1"
+            android:src="@drawable/ic_undo" />
         <ImageButton
             android:id="@+id/ib_brush"
             android:layout_width="50dp"
@@ -184,6 +200,14 @@
             android:contentDescription="@string/select_brush_size"
             android:scaleType="fitXY"
             android:src="@drawable/ic_brush" />
+        <ImageButton
+            android:id="@+id/ib_save"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/select_brush_size"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_save" />
     </LinearLayout>
 
 

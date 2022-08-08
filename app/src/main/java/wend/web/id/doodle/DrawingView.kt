@@ -16,6 +16,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     private var color = Color.BLACK
     private var canvas: Canvas? = null
     private val mPaths = ArrayList<CustomPath>()
+    private val mUndoPaths = ArrayList<CustomPath>()
 
     init {
         setupDrawing()
@@ -80,6 +81,10 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
                 // store the mDrawPath to mPaths to make the drawing persistence
                 mPaths.add(mDrawPath!!)
 
+                // remove old undo when user make new path
+                if (mUndoPaths.size > 0) {
+                    mUndoPaths.clear()
+                }
                 mDrawPath = CustomPath(color, mBrushSize)
             }
             else -> return false
@@ -97,6 +102,25 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
         mBrushSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, newSize, resources.displayMetrics)
 
         mDrawPaint!!.strokeWidth = mBrushSize
+    }
+
+    fun onClickUndo() {
+        if (mPaths.size > 0) {
+            mUndoPaths.add(mPaths.removeAt(mPaths.lastIndex))
+            invalidate() // this will call onDraw method
+        }
+    }
+
+    fun onClickRedo() {
+        if (mUndoPaths.size > 0) {
+            mPaths.add(mUndoPaths.removeAt(mUndoPaths.lastIndex))
+            invalidate()
+        }
+    }
+
+    fun isEmpty(): Boolean {
+        if (mPaths.size == 0) return true
+        return false
     }
 
     internal inner class CustomPath(var color: Int, var brushThickness: Float) : Path() {
